@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bio</title>
+        <style>
+            .bio-container{
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-color: black;
+                color: white;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+            .bio-container hr{
+                text-align: center;
+                width: 50%;
+            }
+            .name-div{
+                font-family: 'Times New Roman', Times, serif;
+                font-style: italic;
+            }
+            .image-div img{
+                width: 400px;
+                height: auto;
+            }
+            .about-div h2{
+                text-align: left;
+                margin-left: 310px;
+            }
+            .about-div p{
+                padding: 10px 310px 10px 310px;
+                text-align: justify;
+            }
+            .hobbies-div{
+                text-align: left;
+                margin-right: 550px;
+            }
+            .change-bg-btn{
+                border-radius: 20px;
+                background-color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="bio-container">
+            <div class="name-div">
+                <h1>Thivaghar.M</h1>
+            </div>
+            <hr>
+            <div class="image-div">
+                <img src="photo_page-0001.jpg" alt="User_image">
+            </div>
+            <hr>
+            <div class="about-div">
+                <h2>About:</h2>
+                <p>
+                    I'm a full-stack developer with experience in building
+                    web applications using java, spring boot, react and 
+                    MySQL. I enjoy working on practical projects and 
+                    continuously improving my skills by exploring new 
+                    technologies and solving real world problems.
+                </p>
+            </div>
+            <hr>
+            <div class="hobbies-div">
+                <h2>Hobbies:</h2>
+                <ul type="square">
+                    <li>Cooking</li>
+                    <li>Dancing</li>
+                    <li>Gaming</li>
+                </ul>
+            </div>
+            <button class="change-bg-btn">Change background</button>
+        </div>
+        <script>
+            const bgChangeBtn=document.querySelector(".change-bg-btn");
+            const bgCol=document.querySelector(".bio-container");
+            let isBlack=true;
+            bgChangeBtn.addEventListener("click",()=>{
+                if(isBlack){
+                    bgCol.style.backgroundColor="gray";
+                    isBlack=false;
+                }else{
+                    bgCol.style.backgroundColor="black";
+                    isBlack=true;
+                }
+            });
+        </script>
+    </body>
+</html>
