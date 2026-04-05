@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter the task" class="input-task">
+        <button class="add-task-btn">Add Task</button>
+        <h1>Todo Tasks</h1>
+        <ul class="list-todos"></ul>
+        <script>
+            let todos=[];
+            const input=document.querySelector(".input-task");
+            const addBtn=document.querySelector(".add-task-btn");
+            const list=document.querySelector(".list-todos");
+            addBtn.addEventListener("click",()=>{
+                const task=input.value;
+                todos.push(task);
+                let tasks=``;
+                todos.forEach((todo)=>{
+                    tasks+=`<li>${todo}</li>`;
+                });
+                list.innerHTML=tasks;
+                input.value="";
+            });
+        </script>
+    </body>
+</html>
