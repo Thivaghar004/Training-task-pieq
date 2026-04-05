@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+        <style>
+            .error{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="form">
+            <input type="text" class="username" placeholder="Enter your name">
+            <input type="email" class="email" placeholder="Enter your email">
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            const form=document.querySelector(".form");
+            const details={};
+            form.addEventListener("submit",(e)=>{
+                e.preventDefault();
+                const name=document.querySelector(".username").value.trim();
+                const email=document.querySelector(".email").value.trim();
+                const oldError=document.querySelector("p");
+                if(oldError){
+                    oldError.remove();
+                }
+                if(name==="" || email===""){
+                    const error=document.createElement("p");
+                    error.textContent="Name and Email cannot be empty!";
+                    error.classList.add("error");
+                    form.appendChild(error);
+                }
+                details.name=name;
+                details.email=email;
+                console.log(details);
+                document.querySelector(".username").value="";
+                document.querySelector(".email").value="";
+            });
+        </script>
+    </body>
+</html>
